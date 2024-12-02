@@ -284,9 +284,13 @@ function handleFrame(
   }
 
   const prev = () => {
-    const nextSibling = element.querySelector("*:has(+.sr-focus)")
+    const candidates = element.querySelectorAll(
+      ":not(img[alt='']):not(br):has(~.sr-focus)"
+    )
+
+    const nextSibling = candidates[candidates.length - 1]
     console.log(nextSibling)
-    if (nextSibling !== null) focus(nextSibling)
+    if (nextSibling !== undefined) focus(nextSibling)
     else errorSound()
   }
 
