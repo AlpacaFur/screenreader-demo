@@ -126,6 +126,22 @@ p.note {
   font-size: 2em;
 }
 
+.blank-screen:not(:has(+.hidden)) {
+  display: none;
+}
+
+.blank-screen {
+  position: absolute;
+  color: #ccc;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blank-screen p {
+  font-style: italic;
+}
+
 .container {
   margin-top: 72px;
   display: flex;
