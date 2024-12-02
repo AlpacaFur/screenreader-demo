@@ -205,8 +205,13 @@ function handleFrame(
     element.classList.remove("ready")
     element.classList.add("big")
     element.focus()
-    focus(element.querySelector(".demobody")!.children[0] as HTMLElement)
-    element.querySelector(".demobody")!.scrollTop = 0
+    focus(demoBody.children[0] as HTMLElement)
+    demoBody.scrollTop = 0
+    if (demoBody.classList.contains("default-shown")) {
+      demoBody.classList.remove("hidden")
+    } else {
+      demoBody.classList.add("hidden")
+    }
     setTimeout(() => {
       element.scrollIntoView({
         behavior: "smooth",
