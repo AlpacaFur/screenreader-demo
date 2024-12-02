@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <title>Screen Reader Demo</title>
+</head>
+
+<body>
+  <article class="container">
+    <hgroup>
+      <h1>How do Screen Readers Work?</h1>
+      <p>Mon, Dec 2nd, 2024</p>
+      <p>by <a href="https://lukefelixtaylor.com">Luke Taylor</a></p>
+    </hgroup>
+    <i>Note: The demos on the page will play spoken audio. Headphones are recommended.</i>
+    <p>On the modern web, there are countless resources describing what to do and what not to do in order to make a
+      website accessible. But sometimes these pieces of advice can feel confusing or incomplete without experiencing the
+      problems they solve first-hand.</p>
+    <p>The following demos aim to help bridge that initial information gap.</p>
+
+    <section class="demo-frame ready" tabindex="0">
+      <div class="title-card">
+        <h2>Screen Reader Intro</h2>
+        <p>Understand how basic navigation and focus work with a screen reader.</p>
+        <button>Start Demo</button>
+      </div>
+      <div class="demo">
+        <div class="toolbar">
+          <button class="exit"><span>Exit Demo</span> (esc)</button>
+          <button class="stop-audio"><span>Stop Audio</span> (control)</button>
+          <button class="show-hide-page"><span>Hide Page</span> (p)</button>
+          <!-- <button class="show-hide-code"><span>See Code</span> (c)</button> -->
+        </div>
+        <div class="demobody">
+          <p>If you're using a real screen reader this demo may be difficult to use due to conflicting audio. Press
+            escape to exit the demo now or press down arrow to continue.</p>
+          <p>Welcome! This demo will demonstrate the usage of a basic screen reader. The input keys are simplified for
+            the purpose of the demo but many of the navigation principles are the same for a real tool like
+            NVDA,
+            JAWS, or VoiceOver. Press the down arrow to continue.</p>
+          <p>If you'd like to adjust the speed of the voice, you can do so at any time using the comma key to decrease
+            or period key to increase the speed.</p>
+          <p>Right now you're navigating between blocks of content. In this case the blocks are text, but blocks can be
+            many different pieces of the page including buttons, images, and forms. You can navigate to previous blocks
+            using the up arrow or press the down arrow to continue.
+          </p>
+          <p>Chances are you can see the content of this demo, but many people who use screen readers cannot. Subsequent
+            demos will
+            default to having the page hidden, but you can always reveal it by pressing the button above or P on your
+            keyboard. Press the down arrow to continue.</p>
+          <p>This is the end of the intro demo. From now on, the demos will omit the explicit down arrow prompt. Press
+            escape to exit the demo.</p>
+        </div>
+      </div>
+    </section>
+    <section class="demo-frame ready" tabindex="0">
+      <div class="title-card">
+        <h2>Images and Alt Text</h2>
+        <p>How are images read by a screen reader and how does alt text help?</p>
+        <button>Start Demo</button>
+      </div>
+      <div class="demo">
+        <div class="toolbar">
+          <button class="exit"><span>Exit Demo</span> (esc)</button>
+          <button class="stop-audio"><span>Stop Audio</span> (control)</button>
+          <button class="show-hide-page"><span>Show Page</span> (p)</button>
+        </div>
+        <div class="demobody hidden">
+          <p>This demo will show how different methods of handling images work. To start out with, below is an image
+            with no alt text. Listen for what happens when you focus it.</p>
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2ODIxMTJ8MHwxfGFsbHx8fHx8fHx8fDE3MzMxMjQ4NjF8&ixlib=rb-4.0.3&q=80&w=1080"
+            width="600">
+          <p>That wasn't great, was it? With no alt text, the browser falls back on the file name of the image which in
+            this case is just "photo" followed by a long string of numbers and letters. This is both distracting and
+            uninformative.</p>
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2ODIxMTJ8MHwxfGFsbHx8fHx8fHx8fDE3MzMxMjQ4NjF8&ixlib=rb-4.0.3&q=80&w=1080"
+            width="600" alt="">
+          <p>You actually just missed an image. The previous image has an alt text sent to an empty string. This
+            causes the screen reader to skip over it completely. This is useful if the image is purely decorative
+            like a fancy background or icon. In this case, this is likely fine because the image <i>is</i> a decorative
+            image of some trees.
+          </p>
+          <img src="/wifi-creds.png" width="600" alt="">
+          <p>You just missed another image. But this time it had important content in it about hotel wifi credentials.
+            Without a label there's no way of knowing what
+            it says, and since the alt text is empty, we don't even know we're missing information. In this way, empty
+            alt text should be used, but used carefully.
+          </p>
+          <img src="/wifi-creds.png" width="600"
+            alt="Hotel Wifi credentials. The username is guest and the password is totally secure, all one word, all lowercase.">
+          <p>This is much better, using fully specified alt text. It quickly communicates the essential contents of the
+            image like the username and password, while also ignoring irrelevant
+            info. For example it doesn't matter that the background of the image is purple. This is a good image / alt
+            text pairing.
+          </p>
+          <p>This is the end of this demo. Press escape to exit or P to see the page.</p>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="demo-frame ready" tabindex="0">
+      <div class="title-card">
+        <h2>Textboxes and Forms</h2>
+        <p>How are images read by a screen reader and how does alt text help?</p>
+        <button>Start Demo</button>
+      </div>
+      <div class="demo">
+        <div class="toolbar">
+          <button class="exit"><span>Exit Demo</span> (esc)</button>
+          <button class="stop-audio"><span>Stop Audio</span> (control)</button>
+          <button class="show-hide-page"><span>Show Page</span> (p)</button>
+        </div>
+        <div class="demobody hidden">
+          <p>For this demo.</p>
+          <p>Welcome! This demo will demonstrate the usage of a basic screen reader. The input keys are simplified for
+            the purpose of the demo but many of the navigation principles are the same for a real tool like
+            NVDA,
+            JAWS, or VoiceOver. Press the down arrow to continue.</p>
+        </div>
+      </div>
+    </section> -->
+    <section class="demo-frame ready" tabindex="0">
+      <div class="title-card">
+        <h2>Rotors: Quicker Navigation</h2>
+        <p>Are there faster ways to navigate through a page's content?</p>
+        <button>Start Demo</button>
+      </div>
+      <div class="demo">
+        <div class="toolbar">
+          <button class="exit"><span>Exit Demo</span> (esc)</button>
+          <button class="stop-audio"><span>Stop Audio</span> (control)</button>
+          <button class="show-hide-page"><span>Show Page</span> (p)</button>
+        </div>
+        <div class="demobody hidden">
+          <h1>Rotors: Quicker Navigation</h1>
+          <p>You just focused over a heading. Having properly tagged headings can help experienced screen reader users
+            quickly navigate the page.</p>
+          <p>This is done through the use of a tool called a rotor. Screen readers typically have rotors for multiple
+            different types of items like headers, links, text boxes, and more. Headings in particular are useful
+            because they typically label larger sections and allow you to skip over large blocks of content. In this
+            demo, you can use a header rotor with H to go to the next header and Shift H to go to the previous one. Jump
+            to the next header now using H.</p>
+          <p>This is the next text block. It should have been skipped by using the header rotor.</p>
+          <h2>Section 2</h2>
+          <p>This is a new section labelled by a new heading. For the next task, try finding information about what the
+            next demo shows. There is lots of useless text, so try using the header rotor.</p>
+          <p>This is some example useless text!</p>
+          <p>More useless text!</p>
+          <p>Even more useless text!</p>
+          <h2>Unhelpful Section</h2>
+          <p>This content is not helpful.</p>
+          <h3>Unhelpful Subsection</h3>
+          <p>Neither is this.</p>
+          <p>Nor this.</p>
+          <h2>Another Unhelpful Section</h2>
+          <p>This content is not helpful.</p>
+          <h3>Another Unhelpful Subsection</h3>
+          <p>Neither is this.</p>
+          <p>Nor this.</p>
+          <h2>About the Next Demo</h2>
+          <p>Nice, you found it! The next demo will explore how a link rotor can be used in a similar way.</p>
+          <p>Along the way, you may have noticed different heading levels.
+            These let you know how deep into subsections you are. A larger number means a deeper subsection and
+            typically heading level one is used for a page title. This relies on website authors to setup correctly.
+            It's a
+            big help to screen reader users to know whether they're in a subsection or a main section, so getting these
+            correct can make a site more navigable.</p>
+          <p>This is the end of this demo. You can press escape to exit or P to show the page.</p>
+          <h2>Have we Gone Too Far?</h2>
+          <p>Yes probably, try using shift and h!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-frame ready" tabindex="0">
+      <div class="title-card">
+        <h2>Link Rotors and Labelling</h2>
+        <p>Why its important for link text to concisely describe it.</p>
+        <button>Start Demo</button>
+      </div>
+      <div class="demo">
+        <div class="toolbar">
+          <button class="exit"><span>Exit Demo</span> (esc)</button>
+          <button class="stop-audio"><span>Stop Audio</span> (control)</button>
+          <button class="show-hide-page"><span>Show Page</span> (p)</button>
+        </div>
+        <div class="demobody hidden">
+          <h1>Link Rotors and Labelling</h1>
+          <p>Welcome back. This time we're going to use a link rotor to find links in the page. To open a link, press
+            space. To use the link rotor, press L to go to the next link and shift L to go to the previous link. The
+            following block is a link.</p>
+          <a href="https://example.com">example.com</a>
+          <p>This link is labelled well. It can standalone and clearly communicates where it goes.</p>
+          <p>It may not seem super important to have link labels standalone, until you realize that when navigating by
+            rotor, you only hear the link text.</p>
+          <p>The task for this demo is to find a link to the Web Speech API article on MDN amidst lots of other
+            content and several other links. Use the heading rotor and then link rotor for this.</p>
+          <h2>Evil Links</h2>
+          <a href="https://example.com">Evil Website</a><br>
+          <a href="https://example.com">Not Good Website</a><br>
+          <a href="https://example.com">Merely Okay Website</a><br>
+          <a href="https://example.com">Fine but a Little Sinister Website</a><br>
+          <h2>Useless Links</h2>
+          <a href="https://example.com">Link to this Page</a><br>
+          <a href="https://google.com">Link to Google</a><br>
+          <h2>Cool MDN Articles</h2>
+          <span>Cool article on WebGPU</span>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API">here</a><br>
+          <span>Accessibility info at this</span>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">link</a><br>
+          <span>Another cool article:</span>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API on MDN - You found
+            it!</a>
+          <p>That article happens to discuss the technology this page uses for text to speech. You may have noticed that
+            some of the previous links were just labeled "here" or "link". The confusion resulting from missing
+            surrounding context makes this less accessible than it could be.</p>
+          <p>This is the end of this
+            final demo. Press escape to exit or P to see the page.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo">scrollTo() on MDN</a>
+          <h2>More Evil Links</h2>
+          <a href="https://example.com">Evil Website</a><br>
+          <a href="https://example.com">Not Good Website</a><br>
+          <a href="https://example.com">Merely Okay Website</a><br>
+          <a href="https://example.com">Fine but a Little Sinister Website</a><br>
+
+        </div>
+      </div>
+    </section>
+    <p>Hopefully these examples have been helpful to build some understanding about how screen readers work. If you've
+      found these interesting, I'd recommend installing or activating your system screen reader to see the differences
+      and
+      how its used in more complex pages.</p>
+  </article>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
